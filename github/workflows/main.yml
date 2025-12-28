@@ -15,9 +15,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20.x"
+          cache: "npm" # Optional: Enables caching for faster builds
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci # 'npm ci' is preferred over 'install' for CI
 
       - name: Build App
         run: npm run build
